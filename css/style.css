@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --text-color: #152937;
+  --main-yellow: #fda517;
+  --light-yellow: #ffbb4c;
+  --bg-gray: #dfe7ec;
+  --text-gray: #7392a5;
+  --bg-button: #30485a;
+  --bg-button-hover: #6293b7;
+  --bg-button-open: #bacdd8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.btn-primary {
+  font-size: 18px;
+  padding: 12px 22px;
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--main-yellow);
+  border: 1px solid var(--main-yellow);
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--light-yellow);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 40px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+section {
+  width: 80%;
+  max-width: 680px;
+  margin: 36px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+main .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+main .cards .card {
+  width: calc((100% - 60px) / 4);
+  height: auto;
+  background-color: var(--bg-button);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+}
+
+main .cards .card:hover {
+  background: var(--bg-button-hover);
+}
+
+main .cards .card img {
+  max-width: 50px;
+  max-height: 50px;
+  display: none;
+}
+
+main .cards .card.open {
+  background-color: var(--main-yellow);
+}
+
+main .cards .card.done {
+  background-color: var(--bg-button-open);
+}
+main .cards .card.open img,
+main .cards .card.done img {
+  display: block;
+}
+
+.congratulations {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: italic;
+  display: none;
+}
+
+.congratulations.active {
+  display: block;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+footer .information {
+  background-color: var(--bg-gray);
+  padding: 24px;
+  border-radius: 12px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .information span:first-child {
+  color: var(--text-gray);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+footer .information span:last-child {
+  color: var(--text-color);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    margin: 0;
+    width: 100%;
+    flex: 1 1 0%;
+  }
+
+  section main {
+    flex: 1 1 0%;
+    display: flex;
+    align-items: center;
+  }
+
+  section main .cards {
+    flex: 1;
+  }
+
+  footer .information {
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 18px;
+  }
+
+  footer .information span:first-child {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  footer .information span:last-child {
+    font-size: 24px;
+  }
+}
